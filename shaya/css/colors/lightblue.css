@@ -1,0 +1,324 @@
+#trueHeader #logo{
+	background:url(../../images/colors/lightblue/logo.png) no-repeat center top;
+}
+
+#access .menu ul li a:hover {
+	color: #fff;
+	background-color: #1889c1;
+} 
+#access .menu ul li a.active {
+	color: #fff;
+	background-color: #1889c1;
+}
+#access .menu ul li ul {
+	background: #1889c1;
+}
+#access .menu ul li ul li a {
+	background: #1889c1;
+}
+#access .menu ul li ul li a:hover,
+#access .menu ul li ul li.active a,
+#access .menu ul li ul li a.selected {
+	background: #3ea8dc;
+}
+
+.fullwidthbanner .tp-caption.large_text_two{
+	color: #1889c1;
+}
+
+a.button_slider_02 {
+	color: #1889c1;
+	border: 1px solid #1889c1;
+}
+
+.punch_text03 {
+	background-color: #1889c1;
+}
+
+.features_section1 i {
+	background-color: #1889c1;
+}
+.features_section1 h2 {
+	color: #1889c1;
+}
+.features_section3 .right li i {
+	color: #1889c1;
+}
+
+.peopple_says .faide_slider #slider{
+    background-color: #1889c1;
+}
+
+.punch_text03 .right a {
+	color: #1889c1;
+}
+
+.address-info a {
+	color: #1889c1;
+}
+
+.punch_text {
+	background-color: #1889c1;
+}
+.punch_text a {
+	background-color: #1475a4;
+}
+.punch_text a:hover {
+	color: #1889c1;
+}
+
+.four_col_fusection .one_fourth a:hover {
+	color: #1889c1;
+}
+.four_col_fusection .one_fourth a:hover i {
+	color: #1889c1;
+}
+
+.features_sec02 {
+	background-color: #1889c1;
+}
+
+.punch_text02 b {
+	color: #1889c1;
+}
+
+.big_text1 i {
+	color: #1889c1;
+}
+
+.lirc_section li.left i {
+	color: #1889c1;
+}
+
+.punchline_text_box {
+	border-left: 5px solid #1889c1;
+}
+
+a.knowmore_but {
+	background-color: #1889c1;
+}
+
+.four_col_fusection.inner .one_fourth i {
+	color: #1889c1;
+}
+
+.get_features .get_features_list li.left {
+	background-color: #1889c1;
+}
+
+.fullimage_box2 li i {
+	color: #1889c1;
+}
+.fullimage_box2 h3 {
+	color: #1889c1;
+}
+
+blockquote {
+	border-left: 5px solid #1889c1;
+}
+
+.small_social_links li i {
+	color: #1889c1;
+}
+
+a.but_goback {
+	background: #1889c1;
+}
+
+.portfolioFilter a:hover {
+	color: #fff;
+	background-color: #1889c1;
+}
+.portfolioFilter a.current {
+	color: #fff;
+	background-color: #1889c1;
+}
+
+.error_pagenotfound i {
+	color: #1889c1;
+}
+.error_pagenotfound em {
+	color: #1889c1;
+}
+
+.blog_post a.date strong {
+	color: #1889c1;
+}
+
+.blog_post a.date i {
+	background-color: #1889c1;
+}
+
+.blog_post h3 a {
+	color: #1889c1;
+}
+
+.sidebar_widget ul.arrows_list1 li a {
+	color: #1889c1;
+}
+
+#site-searchform #searchsubmit{
+	background: #1889c1 url(../../images/site-search-icon.png) no-repeat center 14px;
+}
+
+.recent_posts_list li a:hover {
+	color: #1889c1;
+}
+
+.sharepost li {
+	background-color: #1889c1;
+}
+
+.about_author a:hover {
+	color: #1889c1;
+}
+
+.lirt_section li strong {
+	color: #1889c1;
+}
+
+.acc-trigger a { background: url(../../images/colors/lightblue/accordion-ico.png) no-repeat 20px 13px;}
+.acc-trigger a:hover { color: #1889c1; border-bottom: 1px solid #fff;  }
+.acc-trigger.active a { color: #1889c1; background-position: 20px -58px; cursor: default;	}
+.acc-trigger a { background: url(../../images/colors/lightblue/accordion-ico.png) no-repeat 20px 13px;}
+.acc-trigger a:hover { color: #1889c1; border-bottom: 1px solid #fff;  }
+.acc-trigger.active a { color: #1889c1; background-position: 20px -58px; cursor: default;	}
+.acc-trigger a:hover, .acc-trigger.active a, .acc-trigger.active a:hover { color: #1889c1; border-bottom: 1px solid #fff; }
+
+.accrodation .acc-trigger a { background: url(../../images/colors/lightblue/accordion-ico.png) no-repeat 20px 13px;}
+.accrodation .acc-trigger a:hover { color: #1889c1; border-bottom: 1px solid #fff;  }
+.accrodation .acc-trigger.active a { color: #1889c1; background-position: 20px -58px; cursor: default;	}
+.accrodation .acc-trigger.active a:hover { color: #1889c1; border-bottom: 1px solid #fff; }
+
+html ul.tabs-two li.active, html .content_fullwidth ul.tabs-two li.active a,  html .content_fullwidth ul.tabs-two li.active a:hover  { 
+	color:#1889c1;
+}
+html ul.tabs  { 
+	background: #1889c1;
+}
+html ul.tabs li a  { 
+	background-color: #1889c1;
+}
+
+.sidebar_widget ul.tabs li.active, html .sidebar_widget ul.tabs li.active a,  html .sidebar_widget ul.tabs li.active a:hover  {
+		border-top: 1px solid #1889c1;
+}
+.sidebar_widget ul.tabs {
+	background: none;
+}
+.sidebar_widget ul.tabs li a {
+	background: none;
+}
+.sidebar_widget ul.tabs li a:hover {
+	background-color: #383634;
+}
+
+.slider_button2 {
+	background: url(../../images/colors/lightblue/slider-but02.png) no-repeat center top;
+	background-size: 50%;
+}
+
+.features_sec03 .left li i {
+	color: #1889c1;
+}
+
+.twitter_feeds a {
+	color: #1889c1;
+}
+.hosting_page_plan .price {
+	color: #1889c1;
+}
+.hosting_page_plan .price i {
+	color: #1889c1;
+}
+.hosting_page_plan .ordernow h4 {
+	color: #1889c1;
+}
+a.ordernow_but {
+	background-color: #1889c1;
+}
+.big_text2 {
+	color: #1889c1;
+}
+.list2 li {
+	color: #1889c1;
+}
+.our_products.two li .icon i {
+	color: #1889c1;
+}
+.tags li a:hover {
+	background-color: #1889c1;
+}
+.our_support h5 {
+	color: #1889c1;
+}
+
+.top_section li strong {
+	color: #1889c1;
+}
+.features_sec01 ul:hover,
+.features_sec01 ul.active {
+	border-left: 3px solid #1889c1;
+}
+.features_sec01 ul:hover li i,
+.features_sec01 ul:hover li h4,
+.features_sec01 ul.active li i,
+.features_sec01 ul.active li h4 {
+	color: #1889c1;
+}
+.hot_offers strong {
+	color: #2ca3de;
+}
+.hosting_aplans .two li.title {
+	background-color: #1889c1;
+	border-bottom: 5px solid #0b79b0;
+}
+.what_included li:hover {
+	background-color: #1889c1;
+}
+.what_included li.active,
+.what_included li.active i,
+.what_included li.active strong {
+	background-color: #1889c1;
+}
+.new_website a {
+	color: #1889c1;
+}
+.twitter_feeds_main {
+	background: #1889c1 url(../../images/bg-texture3.png) repeat-x left top;
+}
+.twitter_feeds a {
+	color: #fff;
+}
+
+
+.pricing-tables-helight .title {
+	background-color: #0c96ee;
+	border-top: 3px solid #0b8de6;
+	border-bottom: 1px solid #0eabf8;
+}
+.pricing-tables-helight .price {
+	background-color: #0da0f4;
+}
+.button.small.colorchan{
+	color: #fff;
+	background-color: #0da0f4;
+}
+.pricing-tables-helight-two .title {
+	background-color: #0c96ee;
+	border-top: 3px solid #0b8de6;
+	border-bottom: 1px solid #0eabf8;
+}
+.pricing-tables-helight-two .price {
+	background-color: #0da0f4;
+}
+.pricing-tables-main .ordernow .colorchan{
+	color: #fff;
+	background-color: #1889c1;
+}
+.pricing-tables-main .ordernow .colorchan:hover{
+	color: #fff;
+	background-color: #1475a4;
+}
+
+
