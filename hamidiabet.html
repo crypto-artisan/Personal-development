@@ -71,26 +71,183 @@
                 <div class="block-main mb-30">
                   <div class="content-main single-post padDiv">
                     <div class="journal-txt">
-                      <h4><a href="#">WebSite to provide services to diabetic patients (Website & API Project With DB & JWT Authentication)</a></h4>
+                      <h3><a href="#">WebSite to provide services to diabetic patients</a></h3>
                     </div>
                     <div class="post-meta">
                       <ul class="list-unstyled mb-0">
                         <li class="author">Tech Stack:<a href="#">
-                          Asp.Net MVC, HTML, CSS, JavaScript, Bootstrap, JQuery, Ajax, SQL, EntityFramework</a></li><br>
+                          Rest API, Asp.Net MVC, HTML, CSS, JavaScript, Bootstrap, JQuery, Ajax, SQL, EntityFramework</a></li><br><br>
                         
                       </ul>
                     </div>
-                    <p class="mb-30">The project “HamiDiabet” is a responsive website made with Asp.Net MVC Technology using
+
+                    <h5>This repository(HamiDiabet) includes two projects:</h5>
+                    <p class="mb-30">
+                      _HamiDiabet Website project as a client in root of repository(hamidiabetSite Folder)<br>
+                      The project “HamiDiabet Website” is a responsive website made with Asp.Net MVC Technology using
                        C#, Bootstrap, JQuery, Ajax, HTML, CSS, JavaScript, SQL, and EntityFramework.<br>
-                      The website contains all the modules that meet the project requirement and is doing all the work accurately.<br>
+                      User registration and login using JWT.<br>
+                    </p>
+                    <p class="mb-30">
+                      _Rest Api project in root of repository(hamidiabetWebApi Folder)<br>
+                      hamidiabetWebApi is a Rest Api shows how to implement JSON Web Token authentication with <br>
+                      ASP.NET MVC 5, Web Api 2,.Net Framework 4.5<br>
+                    </p>
+
+                  <p class="sparator">Github URL: <a href="https://github.com/soheilasadeghian/HamiDiabet">Project Link</a></p>
+                  </div>
+                  <img src="images/rest.png" style="max-width: 100%;" class="img-responsive" alt="reviews2">
+
+
+                  <br><br>
+                  <h5>Steps:</h5> 
+                  1. Restore DB in SQL Server from the DB file in root of repository <br/>
+                  2. Open hamidiabetWebApi Solution in Visual Studio and build the project <br/>
+                  3. Execute (F5) to run. Browser will throw error page which is fine as this is only WEB-API implementation <br/>
+                  4. Open hamidiabetSite Solution in Visual Studio and build the project <br/>
+                  3. Execute (F5) to run. Browser will show Homepage of website (the picture of homepage is end of this readme)<br/>
+                  4. you can Register and Login to website and see the userTbl Table in database fields how to jwt authentication work
+                  
+                  
+                  <br><br>
+                  <h5> About Implement JWT Authentication:</h5>
+                  JWT authentication is a self-contained authentication protocol where the token is a base64 representation of a object which contains 3 parts seperated by a period:<br><br>
+                  - Header<br>
+                  - Payload (Claims)<br>
+                      set claims for user:setClaimsIdentity function in <a href="https://github.com/soheilasadeghian/HamiDiabet/blob/main/hamidiabetWebApi/testwebapi/SimpleAuthorizationServerProvider.cs" >code</a> <br>
+                  - Signature<br><br>
+                  
+                  The API has 1 controller:<br/>
+                  AuthController Contains the SignUp, and SignOut.<br>
+                  SignIn is here <a href="https://github.com/soheilasadeghian/HamiDiabet/blob/main/hamidiabetWebApi/testwebapi/App_Start/Startup.cs">SignIn</a><br>
+                  i use this NuGet: <a href="https://www.nuget.org/packages/Microsoft.Owin.Security.Jwt">Microsoft.Owin.Security.Jwt</a><br>
+                  
+                  
+                  Hashing:<br>
+                  For hashing we can implement it using various algorithms.This project implements hashing using SHA256.<br>
+                  function of set Sha256Hash is in: <a href="https://github.com/soheilasadeghian/HamiDiabet/blob/main/hamidiabetWebApi/testwebapi/SimpleRefreshTokenProvider.cs">here</a><br>
+                  
+                  <br><br>
+                  <h5> The Auth server exposes the following endpoints:</h5>
+                  <ul>
+                    <li> <a href="">http://host/user/SignUp</a> to register the user</li>
+                    <li> <a href="">http://host/user/signIn</a> to login the user and generate the initial set of access token and refresh token</li>
+                    <li> <a href="">http://host/user/SignOut</a> to register the user</li>
+                    <li> <a href="">http://host/user/signIn</a> to refresh the access token using the refresh token sent</li>
+                  </ul>
+                  <br>
+                  
+                  
+                  implement of this requests is here: <a href="https://github.com/soheilasadeghian/HamiDiabet/blob/main/hamidiabetSite/HamiDiabet/ClassCollection/User.cs">code</a><br>
+                  <br><br>
+
+                  SignUp:
+                <pre style="border: 1px solid #ddd;
+                border-left: 5px solid #00acd7;
+                page-break-inside: avoid;
+                line-height: 1.6;
+                padding: 1em 1.5em;
+                word-wrap: break-word;
+                border-radius: 3px;
+                overflow-x: auto;
+                background: #f4f4f4;
+                font-family: monospace;">
+                  WebRequest:http://host/user/SignUp
+                  Method:POST
+                  ContentType: application/x-www-form-urlencoded
+                  requestBody:
+                      {name} : name
+                    {family} : family
+                    {cityId}: city Id (default:1)
+                    {mobile}: mobile num
+                    {password}: password
+                    {subscribeNewsletter}: subscribe newsletter (true or false)
+                  </pre>
+
+                  signIn:
+                  <pre style="border: 1px solid #ddd;
+                border-left: 5px solid #00acd7;
+                page-break-inside: avoid;
+                line-height: 1.6;
+                padding: 1em 1.5em;
+                word-wrap: break-word;
+                border-radius: 3px;
+                overflow-x: auto;
+                background: #f4f4f4;
+                font-family: monospace;">
+                  WebRequest:http://host/user/signIn
+                  Method:POST
+                  ContentType: application/x-www-form-urlencoded
+                  requestBody:
+                    username: mobile num
+                    password: password
+                    grant_type: password
+                  
+                  sample json output:
+                      json: 
+                      {
+                          "access_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRza",
+                          "token_type": "bearer",
+                          "expires_in": 86399,
+                          "refresh_token": "d4572fbf0763403083448b6c82a0fa0e"
+                      }
+                    </pre>
+                   
+                  SignOut:
+
+                  <pre style="border: 1px solid #ddd;
+                border-left: 5px solid #00acd7;
+                page-break-inside: avoid;
+                line-height: 1.6;
+                padding: 1em 1.5em;
+                word-wrap: break-word;
+                border-radius: 3px;
+                overflow-x: auto;
+                background: #f4f4f4;
+                font-family: monospace;">
+                   signOut Help:
+                  WebRequest:http://host/user/SignOut
+                  Method:POST
+                  requestHeader:
+                    Authorization: “Bearer”+” “+Token
+                  </pre>
+
+                  refreshToken:
+                  
+                  <pre style="border: 1px solid #ddd;
+                border-left: 5px solid #00acd7;
+                page-break-inside: avoid;
+                line-height: 1.6;
+                padding: 1em 1.5em;
+                word-wrap: break-word;
+                border-radius: 3px;
+                overflow-x: auto;
+                background: #f4f4f4;
+                font-family: monospace;">
+                  WebRequest:http://host/user/signIn
+                  Method:POST
+                  ContentType: application/x-www-form-urlencoded
+                  requestBody:
+                    refresh_token: refreshToken  (sample:” 5687654271344265a04d1d8644a9c151”)
+                    grant_type: refresh_token
+                  
+                  sample json output:
+                      json: 
+                      {
+                          "access_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRza",
+                          "token_type": "bearer",
+                          "expires_in": 86399,
+                          "refresh_token": "d4572fbf0763403083448b6c82a0fa0e"
+                      }
+                    </pre>
+                   
                       
-                        </p>
-                  <p class="sparator">Github URL: <a href="https://github.com/soheilasadeghian/CallWithMe">Project Link</a></p>
-                  </div>
-                  <img src="images/hamidiabet.png" style="max-width: 100%;" class="img-responsive" alt="reviews2">
                   <div class="content-main single-post padDiv">
-                    <blockquote>NOTE: .</blockquote>
+                    <blockquote>NOTE: You can also test the API using a tool such as <a href="https://www.getpostman.com/">Postman</a></blockquote>
                   </div>
+                  HamiDiabet Website:<br>
+                  <img src="images/screenshot_hamidiabet.png" style="max-width: 100%;" class="img-responsive" alt="reviews2">
+                  
                 </div>
               </div>
             </div>
