@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- meta -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Soheila Sadeghian Portfolio</title>
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="lib/hover/hover.min.css" rel="stylesheet">
+
+  <!-- Blog Stylesheet File -->
+  <link href="css/blog.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- Responsive css -->
+  <link href="css/responsive.css" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="images/favicon.png">
+
+</head>
+
+<body>
+
+  <!-- start section navbar -->
+  <nav id="main-nav-subpage" class="subpage-nav">
+    <div class="row">
+      <div class="container">
+
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+        </div>
+
+        <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
+
+        <ul class="nav-menu list-unstyled">
+          <li><a href="index.html" class="smoothScroll">Home</a></li>
+          <li><a href="index.html"  class="smoothScroll">About</a></li>
+          <li><a href="index.html" class="smoothScroll">Projects</a></li>
+          <li><a href="doc/SoheilaSadeghianResume2023.pdf" target="_blank" class="smoothScroll">Resume</a></li>
+          <li><a href="index.html" class="smoothScroll">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End section navbar -->
+  <!-- start section main content -->
+  <div class="main-content paddsection">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="row">
+            <div class="container-main single-main">
+              <div class="col-md-12">
+                <div class="block-main mb-30">
+                  <div class="content-main single-post padDiv">
+                    <div class="journal-txt">
+                      <h3><a href="#">Website for selling learning packages with Zarinpal payment gateway and a brief management panel</a></h3>
+                    </div>
+                    <div class="post-meta">
+                      <ul class="list-unstyled mb-0">
+                        <li class="author">Tech Stack:<a href="#">
+                          Asp.Net MVC, C#, SQL, HTML, CSS, JavaScript, Bootstrap, JQuery, Ajax, EntityFramework</a></li><br><br>
+                        
+                      </ul>
+                    </div>
+
+                    
+                    <p class="mb-30">
+                      The project “LMS” is a responsive website<br>
+                    </p>
+                    <p class="mb-30">
+                      _implementation of ZarinPal payment gateway<br/>
+                      _Panel for website (Login System with Session handling)<br/>
+                      _with Database file
+                    </p>
+
+                  <p class="sparator">Github URL: <a href="https://github.com/soheilasadeghian/LMS">Project Link</a></p>
+                  </div>
+
+
+                  <br><br>
+                  <h5>Steps:</h5> 
+                  1. Restore DB in SQL Server from the DB file(lmspricingDB.sql) in root of repository <br/>
+                  2. Open LMS Solution in Visual Studio and build the project <br/>
+                  3. Execute (F5) to run. Browser will throw Home page of website<br/>
+                  4. Open hamidiabetSite Solution in Visual Studio and build the project <br/>
+                  3. Execute (F5) to run. Browser will show Homepage of website (the picture of homepage is end of this readme)<br/>
+                  4. you can go to panel ( add to url /admin) in Login form enter username and password as admin
+                  
+                  <br><br>
+                  Admin Url: ./admin<br/>
+                  Admin Username: "username"<br/>
+                  Password : "password"
+                  <br><br>
+                  <h5> About implementation Zarin Pal payment gateway:</h5><br/>
+                  
+                  <img src="images/zarrinpall.png" style="max-width: 100%;" class="img-responsive" alt="reviews2">
+                  <br/><br/>
+                  _Download and install zarinpal package from NuGet.<br/>
+                  _controller for handling this scenario in Homecontroller: <a href="https://github.com/soheilasadeghian/LMS/blob/main/LMSPricing/Controllers/HomeController.cs">code</a><br/>
+                  <br/>
+                  _create and send request<br/>
+                  _Catch Authority<br/>
+                  _save factor and Authority in DB<br/>
+                  _redirect user to zarinpal StartPay page with authority<br/><br/>
+                  
+                <pre style="border: 1px solid #ddd;
+                border-left: 5px solid #00acd7;
+                page-break-inside: avoid;
+                line-height: 1.6;
+                padding: 1em 1.5em;
+                word-wrap: break-word;
+                border-radius: 3px;
+                overflow-x: auto;
+                background: #f4f4f4;
+                font-family: monospace;">
+
+description = "Buying a bronze package";
+mobile = "+989121212121" ;
+email = "soheila.sadeghian89@gmail.com";
+price = 1000;
+string merchant = ConfigurationManager.AppSettings["merchant"];
+string Authority = "";
+
+zarinpal.PaymentGatewayImplementationServicePortTypeClient zp = new zarinpal.PaymentGatewayImplementationServicePortTypeClient();
+int Status = zp.PaymentRequest(merchant, price, description, email, mobile, "http://our_website_name/result", out Authority);
+
+if (Status == 100)
+{
+    var db = new DataAccessDataContext();
+    var dt = new DateTime();
+    dt = DateTime.Now;
+
+    var factor = new factorTbl();
+
+    factor.Authority = Authority;
+    factor.description = explain;
+    factor.email = email;
+    factor.fullName = fullName;
+    factor.hostDomain = hostDomain;
+    factor.mobile = mobile;
+    factor.packetTitle = description;
+    factor.regDate = dt;
+    factor.price = price;
+    
+    db.factorTbls.InsertOnSubmit(factor);
+    db.SubmitChanges();
+
+    Response.Redirect("https://www.zarinpal.com/pg/StartPay/" + Authority);
+                  </pre>
+
+                  <br>
+                  _after payment by user, zarinpal send authority and payment status to server(call OrderResult in Homecontroller)<br>
+                  _server send request to zarinpal to get RefID(validate transaction)<br>
+                  _save RefID in DB<br>
+                  <br>
+                  <pre style="border: 1px solid #ddd;
+                border-left: 5px solid #00acd7;
+                page-break-inside: avoid;
+                line-height: 1.6;
+                padding: 1em 1.5em;
+                word-wrap: break-word;
+                border-radius: 3px;
+                overflow-x: auto;
+                background: #f4f4f4;
+                font-family: monospace;">
+public ActionResult OrderResult()
+{   
+      if (Request.QueryString["Status"].ToString().Equals("OK"))
+      {
+          long RefID;
+
+          System.Net.ServicePointManager.Expect100Continue = false;
+          zarinpal.PaymentGatewayImplementationServicePortTypeClient zp = new zarinpal.PaymentGatewayImplementationServicePortTypeClient();
+          string merchant = ConfigurationManager.AppSettings["merchant"];
+
+          var Authority = Request.QueryString["Authority"].ToString();
+
+          var db = new DataAccessDataContext();
+          var fac = db.factorTbls.Single(c => c.Authority == Authority);
+
+          int Status = zp.PaymentVerification(merchant, Authority, fac.price, out RefID);
+
+          if (Status == 100)
+          {
+              model.Result.isError = false;
+              model.Result.message = "عملیات پرداخت با موفقیت انجام شد";
+              model.Result.value = RefID + "";
+
+              fac.RefID = RefID + "";
+              db.SubmitChanges();
+
+              return View("OrderResult", model as object);
+          }
+  }
+}
+                    </pre>
+
+                  LMS Website:<br><br>
+                  <img src="images/lms-screenshot.png" style="max-width: 100%;" class="img-responsive" alt="reviews2">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  </div> -->
+  <!-- start section main content -->
+
+  <!-- start section footer -->
+  <div id="footer" class="text-center">
+    <div class="container">
+      <div class="socials-media text-center">
+
+        <ul class="list-unstyled list-social">
+          <li><a href="https://www.linkedin.com/in/soheilasadeghian"><i class="ion-social-linkedin"></i></a></li>
+          <li><a href="https://github.com/soheilasadeghian"><i class="ion-social-github"></i></a></li>
+          <li><a href="https://www.instagram.com/soheila.sadeghian"><i class="ion-social-instagram"></i></a></li>
+          <li><a href="tel:+989128481421"><i class="ion-android-call"></i></a></li>
+          <li><a href="mailto:soheila.sadeghian89@gmail.com"><i class="ion-email"></i></a></li>
+        </ul>
+
+      </div>
+
+      <p>&copy; Copyrights Soheila Sadeghian. All rights reserved.</p>
+
+      <div class="credits">
+        Designed by <a href="https://soheilasadeghian.github.io/">soheila Sadeghian</a>
+      </div>
+
+    </div>
+  </div>
+  <!-- End section footer -->
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/typed/typed.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/magnific-popup/magnific-popup.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
