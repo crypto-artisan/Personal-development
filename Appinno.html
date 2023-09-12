@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- meta -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Soheila Sadeghian Portfolio</title>
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="lib/hover/hover.min.css" rel="stylesheet">
+
+  <!-- Blog Stylesheet File -->
+  <link href="css/blog.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- Responsive css -->
+  <link href="css/responsive.css" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="images/favicon.png">
+
+</head>
+
+<body>
+
+  <!-- start section navbar -->
+  <nav id="main-nav-subpage" class="subpage-nav">
+    <div class="row">
+      <div class="container">
+
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+        </div>
+
+        <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
+
+        <ul class="nav-menu list-unstyled">
+          <li><a href="index.html" class="smoothScroll">Home</a></li>
+          <li><a href="index.html"  class="smoothScroll">About</a></li>
+          <li><a href="index.html" class="smoothScroll">Projects</a></li>
+          <li><a href="doc/SoheilaSadeghianResume2023.pdf" target="_blank" class="smoothScroll">Resume</a></li>
+          <li><a href="index.html" class="smoothScroll">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End section navbar -->
+  <!-- start section main content -->
+  <div class="main-content paddsection">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="row">
+            <div class="container-main single-main">
+              <div class="col-md-12">
+                <div class="block-main mb-30">
+                  <div class="content-main single-post padDiv">
+                    <div class="journal-txt">
+                      <h3><a href="#">News website with admin panel <br>(Website & WebService(SOAP) With DB)</a></h3>
+                    </div>
+                    <div class="post-meta">
+                      <ul class="list-unstyled mb-0">
+                        <li class="author">Tech Stack:<a href="#">
+                          ASP.NET Web Forms, C#, SQL, HTML, CSS, JavaScript, Bootstrap, JQuery, Ajax, EntityFramework</a></li><br><br>
+                        
+                      </ul>
+                    </div>
+
+                    <h5>This repository (Appinno) includes two projects:</h5>
+                    <p class="mb-30">
+                      _Appinno Website project as a client in root of repository(appinno_website Folder)<br>
+                      website includes modules like News, Events, Publications, Downloads, Organizations and Charts.<br>
+                      "Appinno Website" is a website made with ASP.NET Web Forms Technology using C#, SQL, HTML, CSS, JavaScript, Bootstrap, JQuery, Ajax and EntityFramework.<br>
+                      this project use Web Service for read operation as client.<br>
+                    </p>
+                    <p class="mb-30">
+                      _Web Service project with Admin Panel in root of repository(appinno_panel_webservice Folder)<br>
+                      Admin Panel use Web Service for CRUD operations.<br>
+                      this project is a Web Service(SOAP) shows how to implement Web Services with C#, .Net Framework 4.5.<br>
+                      website and panel use web service as client.<br>
+                    </p>
+
+                  <p class="sparator">Github URL: <a href="https://github.com/soheilasadeghian/Appinno">Project Link</a></p>
+                  </div>
+
+
+                  <br><br>
+                  <h5>Steps:</h5> 
+                  1. Restore DB in SQL Server from the DB file in root of repository (AppInnonew.bak.sql)<br/>
+                  2. Open Web Service Solution in Visual Studio and build the project <br/>
+                  3. Execute (F5) to run. Browser will show Homepage of website panel.(the picture of homepage is end of this readme) user:'sa',pass:'sa'<br/>
+                  4. Open Appinno Website Solution in Visual Studio and build the project <br/>
+                  3. Execute (F5) to run. Browser will show Homepage of website.(the picture of homepage is end of this readme)<br/>
+                  
+                  <br/>
+                  <h5>How call a web service Method: </h5>
+                  <br>
+                <pre style="border: 1px solid #ddd;
+                border-left: 5px solid #00acd7;
+                page-break-inside: avoid;
+                line-height: 1.6;
+                padding: 1em 1.5em;
+                word-wrap: break-word;
+                border-radius: 3px;
+                overflow-x: auto;
+                background: #f4f4f4;
+                font-family: monospace;">
+public static string CallMethod( string method, Dictionary<string, string> Parameters)
+{
+    string webServiceURL = "http://localhost:21457/service/userservice.asmx/" + method;
+    byte[] dataStream = CreateHttpRequestData(Parameters);
+
+    WebRequest request = WebRequest.Create(webServiceURL);
+    request.Method = "POST";
+    request.ContentType = "application/x-www-form-urlencoded";
+    Stream stream = request.GetRequestStream();
+    stream.Write(dataStream, 0, dataStream.Length);
+    stream.Close();
+    WebResponse response = request.GetResponse();
+    Stream respStream = response.GetResponseStream();
+    StreamReader reader = new StreamReader(respStream);
+
+    string json = reader.ReadToEnd();
+    return json;
+}</pre>
+                      
+                  
+                  <br><br>
+                  <h5> List of some requests in webservice files:</h5><br>
+
+                  - User service <a href="https://github.com/soheilasadeghian/Appinno/blob/main/appinno_panel_webservice/AppinnoNew/service/userservice.asmx.cs" >asmx file</a><br>
+                  getAllEvents,getAllMessage,getBestIdeaCompetition,getChart,getChartCommentList,getCreativityCompetition,getDaysWithEvent,getDownload,getDownloadCommentList,getEventCommentList,getEvents,getEventsInMonthForList,getIcan,getIcanCommentList,getIdea,getIo,getIoCommentListgetLatestIoForList,getLatestIoForNotification,getLatestMyIranCompetitionForList,getLatestNewsForList,getLatestNewsForNotification,getLatestPubForList,getLatestPubForNotification,getNews,getNewsCommentList,getPartnerForList,getPolicy,getPoll,getPollList,getPollResult,getPub,getPublicationCommentList,getSingleDownload,getSingleEvents,getSingleIcan,getSingleIo,getSingleNews,getSinglePub,getTagList<br>
+
+deleteDownloadContent,deleteEventContent,deleteIOContent,deleteIcanContent,deleteIdea,deleteIdeaContent,deleteNewsContent,deletePublicationContent,deleteReportContent<br>
+
+editDownload,editDownloadContent,editEvent,editEventContent,editIO,editIOContent,editIcan,editIcanContent,editIdea,editIdeaContent,editNews,editNewsContent,editPublication,editPublicationContent,editReport,editReportContent<br>
+
+isExistUser,likeUnlikeDownload,likeUnlikeEvents,likeUnlikeIo,likeUnlikeNews,likeUnlikePub<br>
+
+registerAnswer,registerAnswerContent,registerDownloadContent,registerEvent,registerEventContent,registerIO,registerIOContent,registerIcan,registerIcanContent,registerIdea,registerIdeaContent,registerNews,registerNewsContent,registerPublication,registerPublicationContent,registerReport,registerReportContent,registerResponse,registerResponseContent,registerUser,registermessage,registertag<br>
+
+resetPassword,sendChartComment,sendDownloadComment,sendEventComment,sendIcanComment,sendIoComment,sendNewsComment,sendPubComment,sendValidationCode<br>
+                  <br>
+                  - Upload service <a href="https://github.com/soheilasadeghian/Appinno/blob/main/appinno_panel_webservice/AppinnoNew/service/uploadService.asmx.cs" >asmx file</a><br>
+                  UploadFile,uploadPacket,uploadRequest<br>
+                  <br>
+                  - Push service <a href="https://github.com/soheilasadeghian/Appinno/blob/main/appinno_panel_webservice/AppinnoNew/service/pushservice.asmx.cs" >asmx file</a><br>
+                  sendPush,sendPushTo,setPushInfo<br>
+                  
+                  <br>
+                  <h5> Website:</h5><br>
+                  <img src="images/screenshot-Appinno.png" style="max-width: 100%;" class="img-responsive" alt="reviews2">
+                  
+                  <br><br><br>
+                  <h5> Panel:</h5><br>
+                  <img src="images/panel_home.png" style="max-width: 100%;" class="img-responsive" alt="reviews2">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  </div> -->
+  <!-- start section main content -->
+
+  <!-- start section footer -->
+  <div id="footer" class="text-center">
+    <div class="container">
+      <div class="socials-media text-center">
+
+        <ul class="list-unstyled list-social">
+          <li><a href="https://www.linkedin.com/in/soheilasadeghian"><i class="ion-social-linkedin"></i></a></li>
+          <li><a href="https://github.com/soheilasadeghian"><i class="ion-social-github"></i></a></li>
+          <li><a href="https://www.instagram.com/soheila.sadeghian"><i class="ion-social-instagram"></i></a></li>
+          <li><a href="tel:+989128481421"><i class="ion-android-call"></i></a></li>
+          <li><a href="mailto:soheila.sadeghian89@gmail.com"><i class="ion-email"></i></a></li>
+        </ul>
+
+      </div>
+
+      <p>&copy; Copyrights Soheila Sadeghian. All rights reserved.</p>
+
+      <div class="credits">
+        Designed by <a href="https://soheilasadeghian.github.io/">soheila Sadeghian</a>
+      </div>
+
+    </div>
+  </div>
+  <!-- End section footer -->
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/typed/typed.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/magnific-popup/magnific-popup.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
