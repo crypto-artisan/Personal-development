@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- meta -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Soheila Sadeghian Portfolio</title>
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="lib/hover/hover.min.css" rel="stylesheet">
+
+  <!-- Blog Stylesheet File -->
+  <link href="css/blog.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- Responsive css -->
+  <link href="css/responsive.css" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="images/favicon.png">
+
+</head>
+
+<body>
+
+  <!-- start section navbar -->
+  <nav id="main-nav-subpage" class="subpage-nav">
+    <div class="row">
+      <div class="container">
+
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+        </div>
+
+        <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
+
+        <ul class="nav-menu list-unstyled">
+          <li><a href="index.html" class="smoothScroll">Home</a></li>
+          <li><a href="index.html"  class="smoothScroll">About</a></li>
+          <li><a href="index.html" class="smoothScroll">Projects</a></li>
+          <li><a href="doc/SoheilaSadeghianResume2023.pdf" target="_blank" class="smoothScroll">Resume</a></li>
+          <li><a href="index.html" class="smoothScroll">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End section navbar -->
+  <!-- start section main content -->
+  <div class="main-content paddsection">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="row">
+            <div class="container-main single-main">
+              <div class="col-md-12">
+                <div class="block-main mb-30">
+                  <div class="content-main single-post padDiv">
+                    <div class="journal-txt">
+                      <h3><a href="#">A Restful API for a carboy mobile application<br> (car wash app) Using C# and SQL</a></h3>
+                    </div>
+                    <div class="post-meta">
+                      <ul class="list-unstyled mb-0">
+                        <li class="author">Tech Stack:<a href="#">
+                          Rest API, C#, SQL, EntityFramework</a></li><br><br>
+                        
+                      </ul>
+                    </div>
+
+                    <h5></h5>
+                    <p class="mb-30">
+                      This project is a web service made with Restful API Technology using C#, SQL, .Net Framework 4.5<br>
+                      This web service can be used for any type of client(web app, android, IOS)<br>
+                      The database file is also attached to the repository.<br>
+                    </p>
+
+
+                  <p class="sparator">Github URL: <a href="https://github.com/soheilasadeghian/Carboy">Project Link</a></p>
+                  </div>
+                  <br/><br/>
+                  <img src="images/carboy.png" style="max-width: 100%;" class="img-responsive" alt="reviews2">
+
+                  <br/><br/>
+                  <div class="content-main single-post padDiv">
+                    <blockquote>NOTE: This project is part of the web service used in Carboy system </blockquote>
+                  </div>
+                  
+                  <p class="sparator">In the following, I will explain the big project of Carboy.</p><br/>
+
+
+                  <h5>Carboy system Modules:</h5>
+                  <p class="mb-30">
+                    _ carboy web service: (this repository is this project)<br/>
+                        webservice for repairmans applications(client of api)<br/>
+                    _ custumer web service:<br/>
+                        web service for Customers(who place orders) application(client of api) <br/>
+                    _ web panel for admin to manage system<br/>
+                    _ android app for customers<br/>
+                    _ ios app for customers<br/>
+                    _ web app for customers<br/>
+                    _ android app for repairmans<br/>
+                    _ ios app for repairmans
+                  </p>
+
+                  <br><br>
+                  <h5>System features:</h5>
+                  <ul>
+                    <li> zarinpal payment gateway </li>
+                    <li> Connecting to Mellat Bank customer club web service</li>
+                    <li> Give GiftCard to Customer</li>
+                    <li> Implementation of an algorithm to prevent synchronization of services</li>
+                  </ul>
+ 
+                  <br><br>
+                  <h5>Tools Used :</h5>
+                  <ul>
+                    <li> Visual studio app,Sql server app </li>
+                    <li> Restful API, C#, SQL</li>
+                  </ul>
+
+                  <br><br>
+                  <h5>Installation Steps:</h5> 
+                  1. Restore DB in SQL Server from the DB file in root of repository (CarBoyDBLive.bak)<br/>
+                  2. Open Web Service Solution in Visual Studio and build the project.<br/>
+                  3. Execute (F5) to run. Browser will throw error page which is fine as this is only WEB-API implementation.<br/>
+                  4. You can test the API using a tool such as Unit Test Project in repository.
+                  
+                
+
+                  <br><br>
+                  <h5> Implementation description:</h5>
+                  in <a href="https://github.com/soheilasadeghian/Carboy/blob/main/CarboyWebService/Controllers/CoreController.cs">CoreController</a>
+                  call API method<br><br>
+                  
+                  <br><br>
+                  <h5>List of <a href="https://github.com/soheilasadeghian/Carboy/blob/main/CarboyWebService/Engine.cs">web services</a> :</h5>
+                  <ul>
+                    <li> getUserProductListConstructor </li>
+                    <li> getCarboyPathConstructor </li>
+                    <li> carboyMoveToCustomerConstructor </li>
+                    <li> carboyStartServiceConstructor </li>
+                    <li> carboyServiceProductDeliveredConstructor </li>
+                    <li> ... </li>
+                  </ul>
+
+                  There is some Database Diagrams:<br>
+                  <img src="images/CarDiagram.PNG" style="max-width: 100%;" class="img-responsive" alt="reviews2">
+                  <img src="images/ServiceDiagram.PNG" style="max-width: 100%;" class="img-responsive" alt="reviews2">
+                  <img src="images/CustomerDiagram.PNG" style="max-width: 100%;" class="img-responsive" alt="reviews2">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  </div> -->
+  <!-- start section main content -->
+
+  <!-- start section footer -->
+  <div id="footer" class="text-center">
+    <div class="container">
+      <div class="socials-media text-center">
+
+        <ul class="list-unstyled list-social">
+          <li><a href="https://www.linkedin.com/in/soheilasadeghian"><i class="ion-social-linkedin"></i></a></li>
+          <li><a href="https://github.com/soheilasadeghian"><i class="ion-social-github"></i></a></li>
+          <li><a href="https://www.instagram.com/soheila.sadeghian"><i class="ion-social-instagram"></i></a></li>
+          <li><a href="tel:+989128481421"><i class="ion-android-call"></i></a></li>
+          <li><a href="mailto:soheila.sadeghian89@gmail.com"><i class="ion-email"></i></a></li>
+        </ul>
+
+      </div>
+
+      <p>&copy; Copyrights Soheila Sadeghian. All rights reserved.</p>
+
+      <div class="credits">
+        Designed by <a href="https://soheilasadeghian.github.io/">soheila Sadeghian</a>
+      </div>
+
+    </div>
+  </div>
+  <!-- End section footer -->
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/typed/typed.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/magnific-popup/magnific-popup.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
